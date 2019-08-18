@@ -1,0 +1,51 @@
+
+<head>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="gasket.css">
+
+	<script language="javascript" type="text/javascript" src="jquery-2.1.1.min.js"></script>
+	<script language="javascript" type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="jquery.mousewheel.min.js"></script>
+	<script language="javascript" type="text/javascript" src="bootstrap.min.js"></script>
+</head>
+
+<body bgcolor="#EDFFD6">
+	<div class="container-fluid">
+		<div class=" row top-bar">
+			<div class="col-xs-3">
+			</div>
+			<div class="col-xs-3">
+			</div>
+			<div class="col-xs-3">
+			</div>
+			<div class="col-xs-3">
+				<a href="#" class="btn btn-sm btn-default pull-right">
+					Sign Up
+				</a>
+			</div>
+		</div>
+	</div>
+	<div id="wrapper">
+	</div>
+</body>
+
+<script language="javascript" type="text/javascript" src="gasket.js"></script>
+
+<script>
+
+	$("body").on('mousewheel', function(event) {
+		if(event.deltaY > 0 && circleWrapper.radius * 1.15 < 16000000)
+		{
+			zoom("zoomIn");
+		}
+
+		else if (event.deltaY < 0)
+		{
+			if(circleWrapper.radius >= fullScreenRadius){
+				zoom("zoomOut");
+			}
+		}	
+	});
+</script>
